@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daru Rahma Arabic College - Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AC9h4noMLQQo_kfX6dVfFPfh3nh-YhTyQquEB-sxPjnCojn0s88OqCAQ4j1sbDOLcxRvf7J5034YSsNRhyVjbxJKsaKvHxxrexbX1hHWff_pPYMGl2f8BiwNP3AwnyvGEgg5zqA90tIm2A=s1360-w1360-h1020-rw');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.9);
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #1abc9c;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #16a085;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+
+    #collegePage {
+      display: none;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .college-title {
+      font-size: 30px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .college-sub {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .course-info, .teachers-list {
+      background-color: #ecf0f1;
+      padding: 20px;
+      border-radius: 10px;
+      color: #2c3e50;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    .teachers-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .teachers-list li {
+      padding: 5px 0;
+    }
+
+    @media(max-width: 600px) {
+      .course-info, .teachers-list {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+    <!-- Login Section -->
+    <div class="container" id="loginPage">
+      <div class="box">
+        <h2>Login to Daru Rahma College</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkLogin()">Login</button>
+        <p id="errorMsg" class="error"></p>
+      </div>
+    </div>
+
+    <!-- College Info Section -->
+    <div id="collegePage">
+      <div class="college-title">Daru Rahma Arabic College, Kuttiady</div>
+      <div class="college-sub">Affiliated to Darul Huda Islamic University</div>
+
+      <div class="course-info">
+        <h3>About the Hudawi Course</h3>
+        <p>The Hudawi Course is a 12-year integrated Islamic and academic education program under Darul Huda Islamic University.</p>
+        <p>It includes deep learning in Quran, Hadith, Fiqh, Arabic, along with modern education and soft skills. Students are trained to be leaders and educators with moral, intellectual, and social excellence.</p>
+      </div>
+
+      <div class="teachers-list">
+        <h3>Our Teachers (Hudawis)</h3>
+        <ul>
+          <li>👨‍🏫 Ustadh Miras</li>
+          <li>👨‍🏫 Ustadh Thoyyib</li>
+          <li>👨‍🏫 Ustadh Yasir</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function checkLogin() {
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+      const error = document.getElementById("errorMsg");
+
+      if (user === "miras" && pass === "123") {
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("collegePage").style.display = "block";
+      } else {
+        error.textContent = "Incorrect username or password.";
+      }
+    }
+  </script>
+
+</body>
+</html>
